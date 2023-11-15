@@ -50,3 +50,4 @@ $(document).ready(function () {
 
 });
 
+document.getElementById("page_yes").innerHTML = "Oui";
