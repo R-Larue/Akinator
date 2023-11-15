@@ -43,3 +43,17 @@ $(document).ready(function () {
     });
 
 });
+
+document.getElementById("page_yes").onclick = function() {myFunction()};
+
+function myFunction() {
+    // document.getElementById("page_yes").innerHTML = "YOU CLICKED ME!";
+
+    var elem = document.getElementById("page_yes");
+
+    if (elem.innerHTML == "Ceci est une question") {
+        elem.innerHTML = "YOU CLICKED ME!";
+    } else {
+        elem.innerHTML = "Ceci est une question";
+    }
+}
