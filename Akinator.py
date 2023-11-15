@@ -35,7 +35,7 @@ class AkinatorModule:
             self.ALDialog.resetAll()
             self.ALDialog.setLanguage("French")
             # Loading the topics directly as text strings
-            self.topic_name = self.ALDialog.loadTopic("/home/nao/.local/share/PackageManager/apps/Akinator  /topfiles/Akinator.top")
+            self.topic_name = self.ALDialog.loadTopic("/home/nao/.local/share/PackageManager/apps/Akinator/topfiles/Akinator.top")
 
             # Activating the loaded topics
             self.ALDialog.activateTopic(self.topic_name)
