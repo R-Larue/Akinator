@@ -4,12 +4,6 @@ $(document).ready(function () {
     $('#page_start').show();
     $('#page_selection').hide();
 
-    $('#page_selection_oui').hide();
-    $('#page_selection_probablement').hide();
-    $('#page_selection_idk').hide();
-    $('#page_selection_probablement_non').hide();
-    $('#page_selection_non').hide();
-
     function raise(event, value) {
         session.service("ALMemory").done(function(ALMemory) {
             ALMemory.raiseEvent(event, value);
