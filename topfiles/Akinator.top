@@ -7,13 +7,15 @@ concept:(non) [non no nan]
 concept:(idk) ["je ne sais pas" "je sais pas" "chais pas"]
 concept:(probablement) [probablement possible "je pense, oui"]
 concept:(probablement_pas) ["probablement pas" "je ne pense pas" "je pense pas"]
+concept:(start) [start go begin commencez debut]
 
 # Catching inputs and triggering outputs
 #u:(e:onStart) $onStopped=1
 
 # Replying to speech
-u:(~oui) ~oui
-u:(~non) ~non
-u:(~idk) ~idk
-u:(~probablement) ~probablement
-u:(~probablement_pas) ~probablement_pas
+u:(~oui) ~oui $answer=oui
+u:(~non) ~non $answer=non
+u:(~idk) ~idk $answer=idk
+u:(~probablement) ~probablement $answer=probablement
+u:(~probablement_pas) ~probablement_pas $answer=probablement_pas
+u:(~start) ~start $answer=start

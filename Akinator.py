@@ -46,11 +46,17 @@ class AkinatorModule:
             print ("Error was: ", e)
 
 
-    def on_event_answered(self, value):
+        # Connect the event callback.
+        self.subscriber = self.memory.subscriber("answer")
+        self.subscriber.signal.connect(self.on_event_answer)
+
+    def on_event_answer(self, value):
         """
         Callback for answers in Dialog
         """
         print ("R: " + value)
+        if (value=='start'):
+            self.tabletService.showImage("https://static.wikia.nocookie.net/heroes-fr/images/9/9f/Akinator.png/revision/latest?cb=20210323074806&path-prefix=fr")
 
 
     def get_api_info(self):
