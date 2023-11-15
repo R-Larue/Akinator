@@ -13,9 +13,9 @@ concept:(start) [start go begin commencez debut]
 #u:(e:onStart) $onStopped=1
 
 # Replying to speech
-u:(~oui) ~oui $answer=oui
-u:(~non) ~non $answer=non
-u:(~idk) ~idk $answer=idk
-u:(~probablement) ~probablement $answer=probablement
-u:(~probablement_pas) ~probablement_pas $answer=probablement_pas
-u:(~start) ~start $answer=start
+u:(~oui) ~oui $answer="oui"
+u:(~non) ~non $answer="non"
+u:(~idk) ~idk $answer="idk"
+u:(~probablement) ~probablement $answer="probablement"
+u:(~probablement_pas) ~probablement_pas $answer="probablement_pas"
+u:(~start) ~start $answer="start"
