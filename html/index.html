@@ -11,7 +11,7 @@
 
     <script src="jquery-1.11.2.min.js"></script>
     <script src="/libs/qimessaging/1.0/qimessaging.js"></script>
-    <script src="js/Akinator.js" defer></script>
+    <script src="js/Akinator.js"></script>
 
     </head>
 
@@ -52,6 +52,22 @@
         <br><br>
       </center>
     </div>
+
+    <script>
+        document.getElementById("page_yes").onclick = function() {myFunction()};
+
+        function myFunction() {
+            // document.getElementById("page_yes").innerHTML = "YOU CLICKED ME!";
+
+            var elem = document.getElementById("page_yes");
+
+            if (elem.innerHTML == "Ceci est une question") {
+                elem.innerHTML = "YOU CLICKED ME!";
+            } else {
+                elem.innerHTML = "Ceci est une question";
+            }
+        }
+    </script>
 
     </body>
 </html>
