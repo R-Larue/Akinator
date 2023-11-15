@@ -18,32 +18,32 @@ $(document).ready(function () {
 
 	$('#page_start').on('click', function() {
         console.log("click start");
-        raise('SimpleWeb/start', 1)
+        raise('AkinatorDialog/answer', "start")
     });
 
-    $('#page_selection_1').on('click', function() {
+    $('#page_selection_oui').on('click', function() {
         console.log("click oui");
-        raise('SimpleWeb/oui', 1)
+        raise('AkinatorDialog/oui', "oui")
     });
 
-    $('#page_selection_2').on('click', function() {
+    $('#page_selection_probablement').on('click', function() {
         console.log("click probablement");
-        raise('SimpleWeb/probablement', 1)
+        raise('AkinatorDialog/probablement', "probablement")
     });
 
-    $('#page_selection_3').on('click', function() {
+    $('#page_selection_idk').on('click', function() {
         console.log("click je ne sais pas");
-        raise('SimpleWeb/idk', 1)
+        raise('AkinatorDialog/idk', "idk")
     });
 
-    $('#page_selection_3').on('click', function() {
+    $('#page_selection_probablement_pas').on('click', function() {
         console.log("click probablement pas");
-        raise('SimpleWeb/probablement_pas', 1)
+        raise('AkinatorDialog/probablement_pas', "probablement_pas")
     });
 
-    $('#page_selection_3').on('click', function() {
+    $('#page_selection_non').on('click', function() {
         console.log("click Non");
-        raise('SimpleWeb/Non', 1)
+        raise('AkinatorDialog/Non', "non")
     });
 
 });
