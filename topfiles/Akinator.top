@@ -7,7 +7,7 @@ concept:(non) [non no nan]
 concept:(idk) ["je ne sais pas" "je sais pas" "chais pas"]
 concept:(probablement) [probablement possible "je pense, oui"]
 concept:(probablement_pas) ["probablement pas" "je ne pense pas" "je pense pas"]
-concept:(start) [start go begin commencez debut]
+concept:(start) [start begin commencer debut]
 
 # Catching inputs and triggering outputs
 #u:(e:onStart) $onStopped=1
