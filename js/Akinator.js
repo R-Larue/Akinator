@@ -44,4 +44,9 @@ $(document).ready(function () {
 
 });
 
-document.getElementById("page_yes").innerHTML = "Oui";
+
+document.getElementById("page_yes").onclick = function() {myFunction()};
+
+function myFunction() {
+    document.getElementById("page_yes").innerHTML = "YOU CLICKED ME!";
+}
