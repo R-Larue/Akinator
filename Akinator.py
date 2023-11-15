@@ -22,7 +22,7 @@ class AkinatorModule:
         # Init ALMemory service
         self.memory = self.session.service("ALMemory")
         self.subscriber = self.memory.subscriber("Dialog/Answered")
-        self.subscriber.signal.connect(self.on_event_answered)
+        #self.subscriber.signal.connect(self.on_event_answered)
 
         # TODO: Mettre une autre API
         self.url = "http://api.openweathermap.org/data/2.5/weather?id=6454573&APPID=49b584e311c58fa09794e5e25a19d1af&UNITS=metric"
@@ -57,16 +57,17 @@ class AkinatorModule:
         self.subscriber = self.memory.subscriber("answer")
         self.subscriber.signal.connect(self.on_event_answer)
 
-    def on_event_answered(self, value):
-        print ("Answered: " + value)
+        animated_speech = robot_session.service("ALAnimatedSpeech")
+
+    #def on_event_answered(self, value):
+    #    print ("Answered: " + value)
 
     def on_event_answer(self, value):
         """
         Callback for answers in Dialog
         """
         print ("Understood: " + value)
-        if (value=='start'):
-            self.tabletService.showImage("https://static.wikia.nocookie.net/heroes-fr/images/9/9f/Akinator.png/revision/latest?cb=20210323074806&path-prefix=fr")
+        animated_speech.say("Tu as dit " + value)
 
 
     def get_api_info(self):
