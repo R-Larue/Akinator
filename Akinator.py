@@ -24,6 +24,7 @@ class AkinatorModule:
         self.subscriber = self.memory.subscriber("Dialog/Answered")
         self.subscriber.signal.connect(self.on_event_answered)
 
+        # TODO: Mettre une autre API
         self.url = "http://api.openweathermap.org/data/2.5/weather?id=6454573&APPID=49b584e311c58fa09794e5e25a19d1af&UNITS=metric"
 
         # Init ALDialog service
@@ -52,37 +53,13 @@ class AkinatorModule:
         print ("R: " + value)
 
 
-    def __del__(self):
-        """
-        """
-        pass
-
-    def print_weather(self):
+    def get_api_info(self):
         """
         """
         info = requests.get(self.url)
 
         info_json = info.json()
         print ("info_json: %s" % info_json)
-
-    def get_temperature(self):
-        """
-        TODO
-
-        **return (float) :**
-           * temperature (in degrees)
-        """
-        info = requests.get(self.url)
-
-        info_json = info.json()
-        main_info = info_json["main"]
-        print ("main_info: %s" % main_info)
-
-        temperature_kelvins = main_info["temp"]
-        temperature_degrees = temperature_kelvins - 273.15
-
-        print ("temperature: % s" % temperature_degrees)
-        return temperature_degrees
     
     def run(self):
         """
@@ -118,14 +95,7 @@ def main():
     app = qi.Application(url="tcp://10.50.90.103:9559")
     app.start()
 
-    s = app.session
-    my_module = AkinatorModule(s)
-    s.registerService("Akinator", my_module)
-
-    app.run()
-
-    
-    """ parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser()
     parser.add_argument("--ip", type=str, default="127.0.0.1",
                         help="Robot IP address. On robot or Local Naoqi: use '127.0.0.1'.")
     parser.add_argument("--port", type=int, default=9559,
@@ -141,8 +111,11 @@ def main():
                "Please check your script arguments. Run with -h option for help.")
         sys.exit(1)
 
-    demoDialog = DialogTest(app)
-    demoDialog.run() """
+    s = app.session
+    my_module = AkinatorModule(s)
+    s.registerService("Akinator", my_module)
+
+    app.run() 
 
 if __name__ == "__main__":
     main()

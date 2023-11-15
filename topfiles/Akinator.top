@@ -4,7 +4,9 @@ language: frf
 # Defining extra concepts out of words or group of words
 concept:(oui) [oui yes ouais]
 concept:(non) [non no nan]
-concept:(oui) [oui yes ouais]
+concept:(idk) ['je ne sais pas' 'je sais pas' 'chais pas']
+concept:(probablement) [probablement possible 'je pense oui']
+concept:(probablement_pas) ['probablement pas' 'je ne pense pas' 'je pense pas']
 
 # Catching inputs and triggering outputs
 #u:(e:onStart) $onStopped=1
@@ -12,4 +14,6 @@ concept:(oui) [oui yes ouais]
 # Replying to speech
 u:(~oui) ~ok
 u:(~non) ~ok
-u:(~je ne sais pas) ~ok
+u:(~idk) ~ok
+u:(~probablement) ~ok
+u:(~probablement_pas) ~ok
