@@ -45,6 +45,13 @@ class AkinatorModule:
         except Exception as e:
             print ("Error was: ", e)
 
+        # Init ALTabletService.
+        try:
+            self.tabletService = session.service("ALTabletService")
+
+        except Exception as e:
+            print ("Error was: ", e)
+
 
         # Connect the event callback.
         self.subscriber = self.memory.subscriber("answer")
