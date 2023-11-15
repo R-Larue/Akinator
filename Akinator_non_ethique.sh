@@ -12,11 +12,6 @@ qicli call ALAnimatedSpeech.say "Ton personnage est-il une fille ?"
 sleep 2s
 echo -e "Non"
 
-qicli call ALAnimatedSpeech.say "Ton personnage a-t-il des jambes ?"
-
-sleep 2s
-echo -e "Oui"
-
 qicli call ALAnimatedSpeech.say "Ton personnage est-il un youtubeur ?"
 
 sleep 2s
