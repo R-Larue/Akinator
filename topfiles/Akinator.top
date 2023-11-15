@@ -16,6 +16,6 @@ concept:(start) [start go begin commencez debut]
 u:(~oui) $answer="oui"
 u:(~non) $answer="non"
 u:(~idk) $answer="idk"
-u:(~probablement) ~$answer="probablement"
+u:(~probablement) $answer="probablement"
 u:(~probablement_pas) $answer="probablement_pas"
 u:(~start) $answer="start"
