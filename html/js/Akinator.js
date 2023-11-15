@@ -16,9 +16,8 @@ $(document).ready(function () {
         raise('AkinatorDialog/answer', "start")
     });
 
-    $('#test').on('click', function() {
+    $('#page_selection_oui').on('click', function() {
         console.log("click oui");
-        document.getElementById("test").innerHTML = "test";
         raise('AkinatorDialog/answer', "oui")
     });
 
@@ -43,5 +42,3 @@ $(document).ready(function () {
     });
 
 });
-
-console.log("Test JS")

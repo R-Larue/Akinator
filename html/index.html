@@ -31,7 +31,9 @@
         <a><h1 id="page_yes">Ceci est une question</h1></a>  </br>
 
         <div>
-          <a><h4 id="test">Oui</h4></a>
+            <div id="page_selection_oui" >
+                <h4>Oui</h4>
+            </div>
 
           <div id="page_selection_probablement" >
             <h4>Probablement</h4>
@@ -52,24 +54,5 @@
         <br><br>
       </center>
     </div>
-
-    <script>
-        console.log("TEST Html")
-
-        document.getElementById("page_yes").onclick = function() {myFunction()};
-
-        function myFunction() {
-            // document.getElementById("page_yes").innerHTML = "YOU CLICKED ME!";
-
-            var elem = document.getElementById("page_yes");
-
-            if (elem.innerHTML == "Ceci est une question") {
-                elem.innerHTML = "YOU CLICKED ME!";
-            } else {
-                elem.innerHTML = "Ceci est une question";
-            }
-        }
-    </script>
-
     </body>
 </html>
