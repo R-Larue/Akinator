@@ -1,8 +1,8 @@
 $(document).ready(function () {
     session = new QiSession();
 
-    $('#page_start').show();
-    $('#page_selection').hide();
+    // $('#page_start').show();
+    // $('#page_selection').hide();
 
     function raise(event, value) {
         session.service("ALMemory").done(function(ALMemory) {
