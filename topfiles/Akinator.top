@@ -12,8 +12,8 @@ concept:(probablement_pas) ['probablement pas' 'je ne pense pas' 'je pense pas']
 #u:(e:onStart) $onStopped=1
 
 # Replying to speech
-u:(~oui) ~ok
-u:(~non) ~ok
-u:(~idk) ~ok
-u:(~probablement) ~ok
-u:(~probablement_pas) ~ok
+u:(~oui) ~oui
+u:(~non) ~non
+u:(~idk) ~idk
+u:(~probablement) ~probablement
+u:(~probablement_pas) ~probablement_pas
