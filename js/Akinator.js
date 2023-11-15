@@ -22,8 +22,9 @@ $(document).ready(function () {
         raise('AkinatorDialog/answer', "start")
     });
 
-    $('#page_selection_oui').on('click', function() {
+    $('#test').on('click', function() {
         console.log("click oui");
+        document.getElementById("test").innerHTML = "test";
         raise('AkinatorDialog/answer', "oui")
     });
 
@@ -49,6 +50,3 @@ $(document).ready(function () {
 
 });
 
-function myFunction() {
-    document.getElementById("test").innerHTML = "YOU CLICKED ME!";
-}
