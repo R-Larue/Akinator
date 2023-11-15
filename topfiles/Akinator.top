@@ -1,0 +1,15 @@
+topic: ~AkinatorDialog()
+language: frf
+
+# Defining extra concepts out of words or group of words
+concept:(oui) [oui yes ouais]
+concept:(non) [non no nan]
+concept:(oui) [oui yes ouais]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+u:(~oui) ~ok
+u:(~non) ~ok
+u:(~je ne sais pas) ~ok
