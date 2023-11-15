@@ -19,6 +19,8 @@ class AkinatorModule:
         """
         print ("Akinator Module init")
         self.session = session
+        # Animated speech
+        self.animated_speech = self.session.service("ALAnimatedSpeech")
         # Init ALMemory service
         self.memory = self.session.service("ALMemory")
         self.subscriber = self.memory.subscriber("Dialog/Answered")
@@ -57,7 +59,6 @@ class AkinatorModule:
         self.subscriber = self.memory.subscriber("answer")
         self.subscriber.signal.connect(self.on_event_answer)
 
-        animated_speech = robot_session.service("ALAnimatedSpeech")
 
     #def on_event_answered(self, value):
     #    print ("Answered: " + value)
@@ -67,7 +68,7 @@ class AkinatorModule:
         Callback for answers in Dialog
         """
         print ("Understood: " + value)
-        animated_speech.say("Tu as dit " + value)
+        self.animated_speech.say("Tu as dit " + value)
 
 
     def get_api_info(self):
