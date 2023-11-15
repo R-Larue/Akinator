@@ -12,7 +12,6 @@ $(document).ready(function () {
 
 	$('#page_start').on('click', function() {
         console.log("click start");
-
         raise('AkinatorDialog/answer', "start")
     });
 

@@ -23,7 +23,7 @@ class AkinatorModule:
         self.animated_speech = self.session.service("ALAnimatedSpeech")
         # Init ALMemory service
         self.memory = self.session.service("ALMemory")
-        self.subscriber = self.memory.subscriber("Dialog/Answered")
+        self.subscriberDialog = self.memory.subscriber("AkinatorDialog/answer")
         #self.subscriber.signal.connect(self.on_event_answered)
 
         # TODO: Mettre une autre API
@@ -56,10 +56,6 @@ class AkinatorModule:
         # Connect the event callback.
         self.subscriber = self.memory.subscriber("answer")
         self.subscriber.signal.connect(self.on_event_answer)
-
-
-    #def on_event_answered(self, value):
-    #    print ("Answered: " + value)
 
     def on_event_answer(self, value):
         """
