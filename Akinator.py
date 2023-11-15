@@ -48,11 +48,9 @@ class AkinatorModule:
             print ("Error was: ", e)
 
         # Init ALTabletService.
-        try:
-            self.tabletService = session.service("ALTabletService")
-
-        except Exception as e:
-            print ("Error was: ", e)
+        self.tabletService = session.service("ALTabletService")
+        self.tabletService.loadApplication("AkinatorWebView")
+        self.tabletService.showWebview()
 
 
         # Connect the event callback.
