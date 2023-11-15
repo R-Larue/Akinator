@@ -49,7 +49,7 @@ class AkinatorModule:
 
         # Init ALTabletService.
         self.tabletService = session.service("ALTabletService")
-        self.tabletService.loadApplication("/data/home/nao/projects/S9-Pepper")
+        self.tabletService.loadApplication("/data/home/nao/projects/S9-Pepper/html/index.html")
         self.tabletService.showWebview()
 
 
