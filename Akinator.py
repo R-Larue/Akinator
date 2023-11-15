@@ -35,7 +35,7 @@ class AkinatorModule:
             self.ALDialog.resetAll()
             self.ALDialog.setLanguage("French")
             # Loading the topics directly as text strings
-            self.topic_name = self.ALDialog.loadTopic("/data/home/nao/projects/S9-Pepper/topfiles/Akinator.top")
+            self.topic_name = self.ALDialog.loadTopic("/home/nao/.local/share/PackageManager/apps/Akinator  /topfiles/Akinator.top")
 
             # Activating the loaded topics
             self.ALDialog.activateTopic(self.topic_name)
@@ -49,7 +49,7 @@ class AkinatorModule:
 
         # Init ALTabletService.
         self.tabletService = session.service("ALTabletService")
-        self.tabletService.loadApplication("/data/home/nao/projects/S9-Pepper/html/index.html")
+        self.tabletService.loadApplication("Akinator")
         self.tabletService.showWebview()
 
 
