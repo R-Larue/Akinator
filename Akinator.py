@@ -76,7 +76,7 @@ class AkinatorModule:
 
         info_json = info.json()
         print ("info_json: %s" % info_json)
-    
+
     def run(self):
         """
         Loop on, wait for events until manual interruption.
@@ -115,7 +115,7 @@ def main():
     my_module = AkinatorModule(s)
     s.registerService("Akinator", my_module)
 
-    app.run() 
+    app.run()
 
 if __name__ == "__main__":
     main()
