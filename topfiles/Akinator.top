@@ -4,9 +4,9 @@ language: frf
 # Defining extra concepts out of words or group of words
 concept:(oui) [oui yes ouais]
 concept:(non) [non no nan]
-concept:(idk) ['je ne sais pas' 'je sais pas' 'chais pas']
-concept:(probablement) [probablement possible 'je pense oui']
-concept:(probablement_pas) ['probablement pas' 'je ne pense pas' 'je pense pas']
+concept:(idk) ["je ne sais pas" "je sais pas" "chais pas"]
+concept:(probablement) [probablement possible "je pense oui"]
+concept:(probablement_pas) ["probablement pas" "je ne pense pas" "je pense pas"]
 
 # Catching inputs and triggering outputs
 #u:(e:onStart) $onStopped=1
@@ -17,3 +17,4 @@ u:(~non) ~non
 u:(~idk) ~idk
 u:(~probablement) ~probablement
 u:(~probablement_pas) ~probablement_pas
+u:("Damn") Nigueur
