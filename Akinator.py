@@ -18,6 +18,7 @@ class AkinatorModule:
         """
         """
         print ("Akinator Module init")
+        self.hasStarted = False
         self.session = session
         # Animated speech
         self.animated_speech = self.session.service("ALAnimatedSpeech")
@@ -62,7 +63,7 @@ class AkinatorModule:
         """
         Callback for answers in Dialog
         """
-        # self.answer_question_with_api(self, value)
+        # self.answer_question_with_api(value)
         pass
 
     def on_event_click(self, value):
