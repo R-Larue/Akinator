@@ -5,40 +5,42 @@ $(document).ready(function () {
     // $('#page_selection').hide();
 
     function raise(event, value) {
-        session.service("ALMemory").done(function(ALMemory) {
+        session.service("ALMemory").done(function (ALMemory) {
             ALMemory.raiseEvent(event, value);
         });
     }
 
-	$('#page_start').on('click', function() {
+    $('#page_start').on('click', function () {
         console.log("click start");
         raise('AkinatorDialog/answer', "start")
     });
 
-    $('#page_selection_oui').on('click', function() {
+    $('#page_selection_oui').on('click', function () {
         console.log("click oui");
         raise('AkinatorDialog/answer', "oui")
-        ALMemory.getData("req").then(function(data) {
-            document.getElementById("page_yes").innerHTML = data
-        })
+        session.service("ALMemory").then(function (m) {
+            m.getData('req').then(function (data) {
+                console.log(data);
+            }, console.log);
+        }, console.log);
     });
 
-    $('#page_selection_probablement').on('click', function() {
+    $('#page_selection_probablement').on('click', function () {
         console.log("click probablement");
         raise('AkinatorDialog/answer', "probablement")
     });
 
-    $('#page_selection_idk').on('click', function() {
+    $('#page_selection_idk').on('click', function () {
         console.log("click je ne sais pas");
         raise('AkinatorDialog/answer', "idk")
     });
 
-    $('#page_selection_probablement_pas').on('click', function() {
+    $('#page_selection_probablement_pas').on('click', function () {
         console.log("click probablement pas");
         raise('AkinatorDialog/answer', "probablement_pas")
     });
 
-    $('#page_selection_non').on('click', function() {
+    $('#page_selection_non').on('click', function () {
         console.log("click Non");
         raise('AkinatorDialog/answer', "non")
     });
