@@ -24,7 +24,7 @@ class AkinatorModule:
         # Init ALMemory service
         self.memory = self.session.service("ALMemory")
         self.subscriberDialog = self.memory.subscriber("AkinatorDialog/answer")
-        #self.subscriber.signal.connect(self.on_event_answered)
+        self.subscriberDialog.signal.connect(self.on_event_answered)
 
         # TODO: Mettre une autre API
         self.url = "http://api.openweathermap.org/data/2.5/weather?id=6454573&APPID=49b584e311c58fa09794e5e25a19d1af&UNITS=metric"
@@ -65,6 +65,13 @@ class AkinatorModule:
         """
         print ("Understood: " + value)
         self.animated_speech.say("Tu as dit " + value)
+
+    def on_event_answered(self, value):
+        """
+        Callback for answers in Dialog
+        """
+        print ("test", value)
+        # self.animated_speech.say("Tu as dit " + value)
 
 
     def get_api_info(self):
