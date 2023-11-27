@@ -23,36 +23,37 @@ $(document).ready(function () {
     $('#page_start').on('click', function () {
         console.log("click start");
         raise('AkinatorDialog/answer', "start");
+        // refresh_question();
     });
 
     $('#page_selection_oui').on('click', function () {
         console.log("click oui");
         raise('AkinatorDialog/answer', "0");
-        refresh_question()
+        // refresh_question()
     });
 
     $('#page_selection_probablement').on('click', function () {
         console.log("click probablement");
         raise('AkinatorDialog/answer', "3");
-        refresh_question()
+        // refresh_question()
     });
 
     $('#page_selection_idk').on('click', function () {
         console.log("click je ne sais pas");
         raise('AkinatorDialog/answer', "2");
-        refresh_question()
+        // refresh_question()
     });
 
     $('#page_selection_probablement_pas').on('click', function () {
         console.log("click probablement pas");
         raise('AkinatorDialog/answer', "4");
-        refresh_question()
+        // refresh_question()
     });
 
     $('#page_selection_non').on('click', function () {
         console.log("click Non");
         raise('AkinatorDialog/answer', "1");
-        refresh_question()
+        // refresh_question()
     });
 
 });
