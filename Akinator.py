@@ -98,7 +98,10 @@ class AkinatorModule:
         if (self.isFinished):
             self.animated_speech.say("Je sais ! Ton personnage est :")
         self.animated_speech.say(self.question)
-        print(self.question)
+        try :
+            print(self.question)
+        except :
+            print("char chelou")
 
     def run(self):
         """
