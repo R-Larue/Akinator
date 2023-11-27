@@ -80,8 +80,8 @@ class AkinatorModule:
 
         info = requests.get(url)
         info_json = info.json()
-        self.question = info_json["question"]    
-        print(self.question)        
+        self.question = info_json["question"]
+        print(self.question)
 
     def get_api_info(self):
         """
