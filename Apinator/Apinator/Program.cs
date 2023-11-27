@@ -1,3 +1,4 @@
+using System.Security.Authentication;
 using Akinator.Core;
 using Akinator.Core.Interfaces;
 using Akinator.Core.Models.Game;
@@ -52,13 +53,16 @@ app.MapGet("/akinator/response/{answer}", AkiResponse)
 app.Run();
 
 
-static async Task<string> Anecdote(string personne, AkiDb context)
+static async Task<string> Anecdote(string personne, AkiDb context, IConfiguration config)
 {
-    context.anthropic ??= new AnthropicClient();
+    var key = config["Anthropic:ClaudeApiKey"];
+    if(string.IsNullOrEmpty(key))
+        throw new AuthenticationException("No API KEY set");
 
+    context.anthropic ??= new AnthropicClient(new APIAuthentication(key));
     var prompt = 
     $@"N'ajoute aucune fioriture a la réponse. Contente toi de répondre à la question aussi simplement que possible.
-    {AnthropicSignals.HumanSignal} J'ai besoin d'une anecdote ou une très courte histoire sur {personne}{AnthropicSignals.AssistantSignal}";
+    {AnthropicSignals.HumanSignal} raconte moi une petite Trivia sur {personne}{AnthropicSignals.AssistantSignal}";
 
     var parameters = new SamplingParameters()
     {
