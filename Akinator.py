@@ -101,7 +101,7 @@ class AkinatorModule:
 
             print("Avant requete")
 
-            url_problemes = "http://82.66.88.116:5080/akinator/" + self.question
+            url_problemes = "http://82.66.88.116:5080/anecdote/" + self.question
             anecdote = requests.get(url_problemes)
             print("Apres requete", anecdote)
 
