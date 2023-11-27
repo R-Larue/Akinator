@@ -74,6 +74,7 @@ class AkinatorModule:
         response = requests.get('http://82.66.88.116:5080/ping', headers={'accept': 'text/plain'})
 
         data = str(response.text).replace("'", "").replace("u", "")
+        print(data)
 
         self.memory.insert("req", data)
         self.animated_speech.say(data)
