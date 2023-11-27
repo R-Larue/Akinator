@@ -24,8 +24,7 @@ class AkinatorModule:
         # Init ALMemory service
         self.memory = self.session.service("ALMemory")
         self.subscriberDialog = self.memory.subscriber("AkinatorDialog/answer")
-        #self.subscriber.signal.connect(self.on_event_answered)
-
+        self.subscriberDialog.signal.connect(self.on_event_click)
         # TODO: Mettre une autre API
         self.url = "http://api.openweathermap.org/data/2.5/weather?id=6454573&APPID=49b584e311c58fa09794e5e25a19d1af&UNITS=metric"
 
@@ -50,18 +49,27 @@ class AkinatorModule:
         # Init ALTabletService.
         self.tabletService = session.service("ALTabletService")
         self.tabletService.loadApplication("Akinator")
+        self.tabletService.cleanWebview()
+        self.tabletService.reloadPage(1)
         self.tabletService.showWebview()
 
 
         # Connect the event callback.
         self.subscriber = self.memory.subscriber("answer")
-        self.subscriber.signal.connect(self.on_event_answer)
+        self.subscriber.signal.connect(self.on_event_vocal)
 
-    def on_event_answer(self, value):
+    def on_event_vocal(self, value):
         """
         Callback for answers in Dialog
         """
         print ("Understood: " + value)
+        self.animated_speech.say("Tu as dit " + value)
+
+    def on_event_click(self, value):
+        """
+        Callback for answers on click
+        """
+        print ("Cliques sur :", value)
         self.animated_speech.say("Tu as dit " + value)
 
 
