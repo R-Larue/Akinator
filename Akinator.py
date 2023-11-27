@@ -80,9 +80,10 @@ class AkinatorModule:
 
         print("User input : " + value)
 
-        if value == "start" and self.hasStarted == False:
+        # if value == "start" and self.hasStarted == False:
+        if value == "start" :
             url = self.url + '/start'
-            self.hasStarted = True
+            # self.hasStarted = True
         elif value != "start" :
             url = self.url + '/response/' + value
 
