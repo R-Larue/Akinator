@@ -69,7 +69,14 @@ class AkinatorModule:
         Callback for answers on click
         """
         # self.answer_question_with_api(self, value)
-        self.animated_speech.say("Tu as dit " + value)
+        # self.animated_speech.say("Tu as dit " + value)
+
+        response = requests.get('http://82.66.88.116:5080/ping', headers={'accept': 'text/plain'})
+
+        data = str(response.text).replace("'", "").replace("u", "")
+
+        self.memory.insert("req", data)
+        self.animated_speech.say(data)
 
     def answer_question_with_api(self, value):
 
