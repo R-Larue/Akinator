@@ -26,7 +26,7 @@ class AkinatorModule:
         self.subscriberDialog = self.memory.subscriber("AkinatorDialog/answer")
         self.subscriberDialog.signal.connect(self.on_event_click)
         # TODO: Mettre une autre API
-        self.url = "http://api.openweathermap.org/data/2.5/weather?id=6454573&APPID=49b584e311c58fa09794e5e25a19d1af&UNITS=metric"
+        self.url = "http://192.168.1.100:5080/akinator"
 
         # Init ALDialog service
         try:
@@ -65,6 +65,7 @@ class AkinatorModule:
         print ("Understood: " + value)
         self.animated_speech.say("Tu as dit " + value)
 
+<<<<<<< HEAD
     def on_event_click(self, value):
         """
         Callback for answers on click
@@ -72,6 +73,18 @@ class AkinatorModule:
         print ("Cliques sur :", value)
         self.animated_speech.say("Tu as dit " + value)
 
+=======
+        if (value=='start'):
+            url = self.url + '/start'
+            self.hasStarted = True
+        else:
+            url = self.url + '/response/' + value
+
+        info = requests.get(url)
+        info_json = info.json()
+        self.question = info_json["question"]    
+        print(self.question)        
+>>>>>>> 2e229f0 (Started API behaviour)
 
     def get_api_info(self):
         """
@@ -97,7 +110,7 @@ class AkinatorModule:
             print ("Interrupted by user, stopping HumanGreeter")
 
             # stopping the dialog engine
-            self.ALDialog.unsubscribe('ExampleDialog')
+            self.ALDialog.unsubscribe('AkinatorDialog')
             # Deactivating the topic
             self.ALDialog.deactivateTopic(self.topic_name)
             # now that the dialog engine is stopped and there are no more activated topics,
