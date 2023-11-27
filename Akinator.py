@@ -27,7 +27,7 @@ class AkinatorModule:
         self.subscriberDialog = self.memory.subscriber("AkinatorDialog/answer")
         self.subscriberDialog.signal.connect(self.on_event_click)
         # TODO: Mettre une autre API
-        self.url = "http://192.168.1.100:5080/akinator"
+        self.url = "http://82.66.88.116:5080/akinator"
 
         # Init ALDialog service
         try:
@@ -81,7 +81,7 @@ class AkinatorModule:
 
         print("User input : " + value)
 
-        if (value == "start" and self.hasStarted == "False"):
+        if (value == "start" and self.hasStarted == False):
             url = self.url + '/start'
             self.hasStarted = True
         else:
