@@ -13,9 +13,10 @@ concept:(start) [start commencer debut]
 #u:(e:onStart) $onStopped=1
 
 # Replying to speech
-u:(~oui) $answer="oui"
-u:(~non) $answer="non"
-u:(~idk) $answer="idk"
-u:(~probablement) $answer="probablement"
-u:(~probablement_pas) $answer="probablement_pas"
+u:(~oui) $answer="0"
+u:(~non) $answer="1"
+u:(~idk) $answer="2"
+u:(~probablement) $answer="3"
+u:(~probablement_pas) $answer="4"
 u:(~start) $answer="start"
+
