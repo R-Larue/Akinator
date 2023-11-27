@@ -1,7 +1,9 @@
 using Akinator.Core;
 using Akinator.Core.Interfaces;
 using Akinator.Core.Models.Game;
-
+using Anthropic.SDK;
+using Anthropic.SDK.Completions;
+using Anthropic.SDK.Constants;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +29,14 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
+app.MapGet("/ping", Ping)
+.WithName("Ping")
+.WithOpenApi();
+
+app.MapGet("/anecdote/{personne}", Anecdote)
+.WithName("Anecdote")
+.WithOpenApi();
+
 app.MapGet("/akinator/start", AkiStart)
 .WithName("Akinator Start")
 .WithOpenApi();
@@ -42,13 +52,38 @@ app.MapGet("/akinator/response/{answer}", AkiResponse)
 app.Run();
 
 
+static async Task<string> Anecdote(string personne, AkiDb context)
+{
+    context.anthropic ??= new AnthropicClient();
+
+    var prompt = 
+    $@"N'ajoute aucune fioriture a la réponse. Contente toi de répondre à la question aussi simplement que possible.
+    {AnthropicSignals.HumanSignal} J'ai besoin d'une anecdote ou une très courte histoire sur {personne}{AnthropicSignals.AssistantSignal}";
+
+    var parameters = new SamplingParameters()
+    {
+        MaxTokensToSample = 512,
+        Prompt = prompt,
+        Temperature = 0.0m,
+        StopSequences = new[] { AnthropicSignals.HumanSignal },
+        Stream = false,
+        Model = AnthropicModels.Claude_v2_1
+    };
+    var response = await context.anthropic.Completions.GetClaudeCompletionAsync(parameters);
+    // Console.WriteLine(response.Completion);
+    return response.Completion;
+}
+
+static async Task<string> Ping()
+{
+    return "Pong";
+}
+
 
 static async Task<AkiHandler> AkiStart(AkiDb context, IAkinatorClient provider)
 {
-    var client = provider;
-
     // 3. Let's start a new game!
-    context.game = await client.StartNewGame(); // Start a new game (strangely isn't it?)
+    context.game = await provider.StartNewGame(); // Start a new game (strangely isn't it?)
 
     var question = context.game.GetQuestion(); // Curent question
 
@@ -146,4 +181,6 @@ public class AkiAnswersHandler
 public class AkiDb : DbContext
 {
     public IAkinatorGame game { get; set; }
+
+    public AnthropicClient anthropic { get; set; }
 }
