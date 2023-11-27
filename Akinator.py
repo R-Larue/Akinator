@@ -72,13 +72,9 @@ class AkinatorModule:
         # self.answer_question_with_api(self, value)
         # self.animated_speech.say("Tu as dit " + value)
 
-        response = requests.get('http://82.66.88.116:5080/ping', headers={'accept': 'text/plain'})
+        # response = requests.get('http://82.66.88.116:5080/ping', headers={'accept': 'text/plain'})
+        self.answer_question_with_api(self, value)
 
-        data = str(response.text).replace("'", "").replace("u", "")
-        print(data)
-
-        self.memory.insertData("req", data)
-        self.animated_speech.say(data)
 
     def answer_question_with_api(self, value):
 
@@ -94,6 +90,10 @@ class AkinatorModule:
         info_json = info.json()
         self.isFinished = info_json["isGuess"]
         self.question = info_json["question"]
+
+        # data = str(ques).replace("'", "").replace("u", "")
+        self.memory.insertData("question", self.question)
+
         if (self.isFinished):
             self.animated_speech.say("Je sais ! Ton personnage est :")
         self.animated_speech.say(self.question)
