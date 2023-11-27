@@ -23,8 +23,6 @@ $(document).ready(function () {
     $('#page_start').on('click', function () {
         console.log("click start");
         raise('AkinatorDialog/answer', "start");
-        refresh_question();
-        refresh_question()
     });
 
     $('#page_selection_oui').on('click', function () {
