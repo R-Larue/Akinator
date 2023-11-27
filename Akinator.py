@@ -62,7 +62,8 @@ class AkinatorModule:
         """
         Callback for answers in Dialog
         """
-        self.answer_question_with_api(self, value)
+        # self.answer_question_with_api(self, value)
+        pass
 
     def on_event_click(self, value):
         """

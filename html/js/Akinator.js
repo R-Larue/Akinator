@@ -18,6 +18,9 @@ $(document).ready(function () {
     $('#page_selection_oui').on('click', function() {
         console.log("click oui");
         raise('AkinatorDialog/answer', "oui")
+        ALMemory.getData("req").then(function(data) {
+            document.getElementById("page_yes").innerHTML = data
+        })
     });
 
     $('#page_selection_probablement').on('click', function() {
