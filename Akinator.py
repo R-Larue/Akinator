@@ -65,7 +65,6 @@ class AkinatorModule:
         print ("Understood: " + value)
         self.animated_speech.say("Tu as dit " + value)
 
-<<<<<<< HEAD
     def on_event_click(self, value):
         """
         Callback for answers on click
@@ -73,7 +72,6 @@ class AkinatorModule:
         print ("Cliques sur :", value)
         self.animated_speech.say("Tu as dit " + value)
 
-=======
         if (value=='start'):
             url = self.url + '/start'
             self.hasStarted = True
@@ -84,7 +82,6 @@ class AkinatorModule:
         info_json = info.json()
         self.question = info_json["question"]    
         print(self.question)        
->>>>>>> 2e229f0 (Started API behaviour)
 
     def get_api_info(self):
         """
