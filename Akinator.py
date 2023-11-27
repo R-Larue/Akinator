@@ -62,17 +62,19 @@ class AkinatorModule:
         """
         Callback for answers in Dialog
         """
-        print ("Understood: " + value)
-        self.animated_speech.say("Tu as dit " + value)
+        self.answer_question_with_api(self, value)
 
     def on_event_click(self, value):
         """
         Callback for answers on click
         """
-        print ("Cliques sur :", value)
-        self.animated_speech.say("Tu as dit " + value)
+        self.answer_question_with_api(self, value)
 
-        if (value=='start'):
+    def answer_question_with_api(self, value):
+
+        print("User input : " + value)
+
+        if (value == "start" and self.hasStarted == "False"):
             url = self.url + '/start'
             self.hasStarted = True
         else:
@@ -82,14 +84,6 @@ class AkinatorModule:
         info_json = info.json()
         self.question = info_json["question"]
         print(self.question)
-
-    def get_api_info(self):
-        """
-        """
-        info = requests.get(self.url)
-
-        info_json = info.json()
-        print ("info_json: %s" % info_json)
 
     def run(self):
         """
