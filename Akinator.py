@@ -50,7 +50,7 @@ class AkinatorModule:
         # Init ALTabletService.
         self.tabletService = session.service("ALTabletService")
         self.tabletService.loadApplication("Akinator")
-        self.tabletService.clearWebview()
+        self.tabletService.cleanWebview()
         self.tabletService.showWebview()
 
 
