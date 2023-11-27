@@ -76,7 +76,7 @@ class AkinatorModule:
         data = str(response.text).replace("'", "").replace("u", "")
         print(data)
 
-        self.memory.insert("req", data)
+        self.memory.insertData("req", data)
         self.animated_speech.say(data)
 
     def answer_question_with_api(self, value):
