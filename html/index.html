@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
 
-    <meta name="viewport"
-          content="initial-scale = 1.34,
-                   minimum-scale = 1.34,
-                   maximum-scale = 1.34" />
+<head>
+    <title>Votre Jeu</title>
+    <meta name="viewport" content="initial-scale = 1.34, minimum-scale = 1.34, maximum-scale = 1.34" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
     <script src="jquery-1.11.2.min.js"></script>
     <script src="/libs/qimessaging/1.0/qimessaging.js"></script>
     <script src="js/Akinator.js"></script>
-
     <link rel="stylesheet" href="css/style.css">
+</head>
 
-    </head>
-
-  <body>
+<body>
 
     <div id="page_empty">
-      <a><h1></h1></a>
+        <a>
+            <h1></h1>
+        </a>
     </div>
 
     <div id="page_start">
-      <a><h1>Cliquez ici ou dites "Start" pour commencer la partie.</h1></a>
+        <a>
+            <h1>Cliquez ici ou dites "Start" pour commencer la partie.</h1>
+        </a>
     </div>
 
     <div id="page_selection">
-      <center>
-        <br><br>
-        <!-- <a><h1 id="question">⇡ Lancez le jeu ⇡</h1></a></br> -->
+        <center>
+            <div>
+                <div id="page_selection_oui">
+                    <button class="response-button">Oui</button>
+                </div>
 
-        <div>
-            <div id="page_selection_oui" >
-                <a href=""><h4>Oui</h4></a>
+                <div id="page_selection_probablement">
+                    <button class="response-button">Probablement</button>
+                </div>
+
+                <div id="page_selection_idk">
+                    <button class="response-button">Je ne sais pas</button>
+                </div>
+
+                <div id="page_selection_probablement_pas">
+                    <button class="response-button">Probablement pas</button>
+                </div>
+
+                <div id="page_selection_non">
+                    <button class="response-button">Non</button>
+                </div>
             </div>
-
-          <div id="page_selection_probablement" >
-            <h4>Probablement</h4>
-          </div>
-
-          <div id="page_selection_idk" >
-            <h4>Je ne sais pas</h4>
-          </div>
-
-          <div id="page_selection_probablement_pas" >
-            <h4>Probablement pas</h4>
-          </div>
-
-          <div id="page_selection_non" >
-            <h4>Non</h4>
-          </div>
-        </div>
-        <br><br>
-      </center>
+        </center>
     </div>
-    </body>
+
+</body>
+
 </html>
