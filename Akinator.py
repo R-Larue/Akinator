@@ -103,11 +103,9 @@ class AkinatorModule:
 
             url_problemes = "http://82.66.88.116:5080/anecdote/" + self.question
             anecdote = requests.get(url_problemes)
-            print("Apres requete", anecdote)
+            print("Apres requete")
 
             anecdote_text = anecdote.text
-
-            print(anecdote_text)
 
             self.animated_speech.say(anecdote_text)
 
