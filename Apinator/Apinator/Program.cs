@@ -96,7 +96,7 @@ static async Task<AkiHandler> AkiStart(AkiDb context, IAkinatorClient provider)
         QuestionNumber = 1,
         Question = question
     };
-
+    System.Console.WriteLine($"Q{r.QuestionNumber} : {question} (0.0%)");
     return r;
 }
 
@@ -110,6 +110,7 @@ static async Task<AkiAnswersHandler> AkiListAnswers(AkiDb context)
     }
 
     r.Answers = context.game.GetAnswers(); // Possible answers
+
     return r;
 }
 
@@ -150,16 +151,18 @@ static async Task<AkiHandler> AkiResponse(int answer, AkiDb context)
 
     var question = context.game.GetQuestion();
     var guessedItems = await context.game.Win(); // Return guessed items. 60-70 progress will be enough to make successful guesses.
-
     r.Guesses = guessedItems;
+
     if (canGuess)
     {
         r.Question = guessedItems.First().Name;
+        System.Console.WriteLine($"R{currentStep} : C'est {guessedItems.First().Name} ({progress}%)");
         return r;
     }
     else
     {
         r.Question = question;
+        System.Console.WriteLine($"Q{currentStep} : {question} ({progress}%)");
         return r;
     }
 }
