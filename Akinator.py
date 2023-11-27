@@ -97,7 +97,18 @@ class AkinatorModule:
 
         if (self.isFinished):
             self.animated_speech.say("Je sais ! Ton personnage est :")
-        self.animated_speech.say(self.question)
+            self.animated_speech.say(self.question)
+
+            url_problemes = "http://82.66.88.116:5080/akinator/" + self.question
+            anecdote = requests.get(url_problemes)
+
+            anecdote_text = anecdote.text
+
+            self.animated_speech.say(anecdote_text)
+
+        else :
+            self.animated_speech.say(self.question)
+
         try :
             print(self.question)
         except :
