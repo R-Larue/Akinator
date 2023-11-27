@@ -63,8 +63,7 @@ class AkinatorModule:
         """
         Callback for answers in Dialog
         """
-        # self.answer_question_with_api(value)
-        pass
+        self.answer_question_with_api(value)
 
     def on_event_click(self, value):
         """
@@ -81,10 +80,10 @@ class AkinatorModule:
 
         print("User input : " + value)
 
-        if (value == "start" and self.hasStarted == False):
+        if value == "start" and self.hasStarted == False:
             url = self.url + '/start'
             self.hasStarted = True
-        else:
+        elif value != "start" :
             url = self.url + '/response/' + value
 
         info = requests.get(url)
