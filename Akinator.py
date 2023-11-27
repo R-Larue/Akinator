@@ -83,7 +83,11 @@ class AkinatorModule:
 
         info = requests.get(url)
         info_json = info.json()
+        self.isFinished = info_json["isGuess"]
         self.question = info_json["question"]
+        if (self.isFinished):
+            self.animated_speech.say("Je sais ! Ton personnage est :")
+        self.animated_speech.say(self.question)
         print(self.question)
 
     def run(self):
