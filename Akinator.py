@@ -104,6 +104,8 @@ class AkinatorModule:
 
             anecdote_text = anecdote.text
 
+            print(anecdote_text)
+
             self.animated_speech.say(anecdote_text)
 
         else :
