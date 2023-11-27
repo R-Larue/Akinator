@@ -20,7 +20,7 @@ $(document).ready(function () {
         raise('AkinatorDialog/answer', "oui")
         session.service("ALMemory").then(function (m) {
             m.getData('req').then(function (data) {
-                console.log(data);
+                document.getElementById("page_yes").innerHTML = data;
             }, console.log);
         }, console.log);
     });
