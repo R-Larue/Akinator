@@ -73,7 +73,7 @@ class AkinatorModule:
         # self.animated_speech.say("Tu as dit " + value)
 
         # response = requests.get('http://82.66.88.116:5080/ping', headers={'accept': 'text/plain'})
-        self.answer_question_with_api(self, value)
+        self.answer_question_with_api(value)
 
 
     def answer_question_with_api(self, value):
