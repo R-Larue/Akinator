@@ -42,14 +42,6 @@ h4:hover {
     transition: background-color 0.3s ease;
 }
 
-#page_selection_oui:hover,
-#page_selection_probablement:hover,
-#page_selection_idk:hover,
-#page_selection_probablement_pas:hover,
-#page_selection_non:hover {
-    background-color: #bdbdbd; /* gris moyen */
-}
-
 @media (max-width: 600px) {
     h1 {
         font-size: 1.5em;
