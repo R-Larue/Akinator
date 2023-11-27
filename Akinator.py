@@ -67,7 +67,7 @@ class AkinatorModule:
 
     def on_event_click(self, value):
         """
-        Callback for answers in Dialog
+        Callback for answers on click
         """
         print ("Cliques sur :", value)
         self.animated_speech.say("Tu as dit " + value)
