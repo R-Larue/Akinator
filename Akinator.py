@@ -49,9 +49,10 @@ class AkinatorModule:
 
         # Init ALTabletService.
         self.tabletService = session.service("ALTabletService")
-        self.tabletService.loadApplication("Akinator")
         self.tabletService.cleanWebview()
+        self.tabletService.loadApplication("Akinator")
         self.tabletService.showWebview()
+        self.tabletService.reloadPage()
 
 
         # Connect the event callback.
