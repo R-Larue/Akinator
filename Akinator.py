@@ -68,7 +68,8 @@ class AkinatorModule:
         """
         Callback for answers on click
         """
-        self.answer_question_with_api(self, value)
+        # self.answer_question_with_api(self, value)
+        self.animated_speech.say("Tu as dit " + value)
 
     def answer_question_with_api(self, value):
 
