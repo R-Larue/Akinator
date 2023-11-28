@@ -99,7 +99,7 @@ class AkinatorModule:
             self.animated_speech.say("Je sais ! Ton personnage est :")
             self.animated_speech.say(self.question)
 
-            self.animated_speech.say("Je vais maintenant vous donner une anecdote amusante en lien avec " + self.question)
+            self.animated_speech.say("Je vais maintenant vous donner une anecdote amusante sur ce personnage")
 
             print("Avant requete anecdote")
 
