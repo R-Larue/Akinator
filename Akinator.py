@@ -99,11 +99,13 @@ class AkinatorModule:
             self.animated_speech.say("Je sais ! Ton personnage est :")
             self.animated_speech.say(self.question)
 
-            print("Avant requete")
+            self.animated_speech.say("Je vais maintenant vous donner une anecdote amusante en lien avec " + self.question)
+
+            print("Avant requete anecdote")
 
             url_problemes = "http://82.66.88.116:5080/anecdote/" + self.question
             anecdote = requests.get(url_problemes)
-            print("Apres requete")
+            print("Apres requete anecdote")
 
             anecdote_text = anecdote.text
 
