@@ -1,4 +1,45 @@
 # S9-Pepper - AkinaBOT
+### Alexis LOCHAMBON | Batiste LALOI | Raphael LARUE
+
+## Vidéo démonstration du robot : 
+
+[Vidéo YouTube](https://youtu.be/I8YR_yzOMvo)
+
+## Explication
+
+Le programme du robot est basé sur un fichier unique `Akinator.py` qui contient tout le comportement de notre robot
+
+L'utilisateur peut, par la voix ou le toucher : 
+
+- Démarrer une partie
+- Jouer la partie en répondant aux questions posées par le robot
+- Recommencer une partie pendant ou la fin d'une partie déjà lancée
+
+## Démarrage du robot
+
+Pour démarrer l'application, il faut, une fois connecté en SSH au robot via la commande `ssh nao@[PEPPER ADDRESS]`, lancer les commandes suivantes :
+
+Récupération de l'application :
+```bash
+# Chemin parent de l'application
+cd ~/.local/share/PackageManager/apps
+
+# Téléchargement de l'application
+git clone https://github.com/R-Larue/Akinator
+```
+
+Lancement de l'application : 
+```bash
+# Chemin de l'application
+cd ~/.local/share/PackageManager/apps/Akinator
+
+# Lancement de l'application
+python2.7 Akinator.py
+```
+
+## Déviance éthique
+
+A la fin d'une partie, le robot donne une anecdote sur la personnes trouvée, ce qui peut amener à le robot à donner un avis politique sur la personne, ou à diffamer untel, de part la génération d'un prompt par un LLM que nous ne contrôlons pas dans son intégralité. Une décrédibilisation de personnages politiques ou gouvernementaux peut aussi advenir.
 
 ## API
 
